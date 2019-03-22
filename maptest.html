@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to get a new array with the full name of each person in the array.</p>
+<button onclick="putOnPage()">Click for new Mapped Array</button>
+
+<p>Question: <span id="question"></span></p>
+<p>Right Answer: <span id="right"></span></p>
+<p>Wrong Answer: <span id="wrong"></span></p>
+
+<script>
+var questions = [
+  {question : "The Dude", answer: "White Russian", wrong: "Beer"},
+  {question : "James Bond", answer: "Vesper", wrong: "Beer"},
+  {question : "Don Draper", answer: "Old Fashioned", wrong: "Beer"}
+];
+
+//get question
+function getQuestion(item,index) {
+  var question = [item.question];
+  return question;
+}
+
+//get correct
+function getRight(item,index) {
+    var rightAnswer = [item.answer];
+    return rightAnswer;
+}
+
+
+//get wrong
+function getWrong(item,index) {
+    var wrongAnswer = [item.wrong];
+    return wrongAnswer;
+}
+
+//inject into the dom the new mapped array
+function putOnPage() {
+  document.getElementById("question").innerHTML = questions.map(getQuestion);
+  document.getElementById("right").innerHTML = questions.map(getRight);
+  document.getElementById("wrong").innerHTML = questions.map(getWrong);
+}
+
+
+</script>
+
+</body>
+</html>
