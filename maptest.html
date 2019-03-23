@@ -11,9 +11,16 @@
 
 <script>
 var questions = [
-  {question : "The Dude", answer: "White Russian", wrong: "Beer"},
-  {question : "James Bond", answer: "Vesper", wrong: "Beer"},
-  {question : "Don Draper", answer: "Old Fashioned", wrong: "Beer"}
+  {question : "The Dude", answer: "White Russian"},
+  {question : "James Bond", answer: "Vesper"},
+  {question : "Don Draper", answer: "Old Fashioned"},
+];
+
+var wrongAnswers = [  
+  {question : "The Dude",  wrong: "Beer", wrong2: "Mai Thai", wrong3: "Water"},
+  {question : "James Bond",  wrong: "Beer", wrong2: "Mai Thai", wrong3: "Water"},
+  {question : "Don Draper",  wrong: "Beer", wrong2: "Mai Thai", wrong3: "Water"}
+  
 ];
 
 //get question
@@ -31,7 +38,7 @@ function getRight(item,index) {
 
 //get wrong
 function getWrong(item,index) {
-    var wrongAnswer = [item.wrong];
+    var wrongAnswer = [item.wrong, item.wrong2, item.wrong3];
     return wrongAnswer;
 }
 
@@ -39,7 +46,7 @@ function getWrong(item,index) {
 function putOnPage() {
   document.getElementById("question").innerHTML = questions.map(getQuestion);
   document.getElementById("right").innerHTML = questions.map(getRight);
-  document.getElementById("wrong").innerHTML = questions.map(getWrong);
+  document.getElementById("wrong").innerHTML = wrongAnswers.map(getWrong);
 }
 
 
