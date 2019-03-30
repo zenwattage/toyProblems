@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Single AJAX</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    var movieId = "tt0137523";
+    var queryUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=236b7cdb' + movieId + '&plot=short';
+
+
+    $.ajax({
+      url: queryUrl,
+      method: 'GET'
+    }).then(function(response) {
+      console.log(response);
+      console.log(response.Runtime);
+      
+    });
+
+    console.log("this will run first because of asynchronicity");
+    
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
